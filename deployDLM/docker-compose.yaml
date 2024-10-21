@@ -1,0 +1,20 @@
+services:
+  fastapi:
+    build: ./fastap
+    container_name: fastapi_container
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+  gradio:
+    build: ./gradio_app
+    container_name: gradio_container
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
