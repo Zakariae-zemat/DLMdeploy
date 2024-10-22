@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.12-slim
 
 # Set up the working directory
 WORKDIR /app
@@ -8,11 +8,11 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the Gradio app code
-COPY gradio_app.py .
+COPY . .
 
 # Expose the port Gradio runs on
 EXPOSE 8088
 
 # Run the Gradio app
-CMD ["python", "gradio_app.py"]
+CMD ["python", "interface.py"]
 
