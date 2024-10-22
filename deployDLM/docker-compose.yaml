@@ -11,7 +11,7 @@ services:
     build: ./gradio_app
     container_name: gradio_container
     ports:
-      - "8080:8080"
+      - "8088:8088"
     networks:
       - app-network
 
